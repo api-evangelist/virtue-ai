@@ -1,0 +1,24 @@
+generated: '2026-07-21'
+method: searched
+source: https://www.npmjs.com/package/@virtue-ai/gateway-connect
+description: >-
+  Authentication model for the Virtue AI MCP gateway surface. No public REST
+  OpenAPI is published, so this profile is captured from the documented gateway
+  connection flow rather than derived from a spec. Connecting an agent runtime
+  performs a browser-based OAuth login against the gateway; thereafter each
+  proxied MCP tools/call request carries a Bearer access token.
+summary:
+  types: [oauth2, http]
+  api_key_in: []
+  oauth2_flows: [authorizationCode]
+schemes:
+  - name: gatewayOAuth
+    type: oauth2
+    flow: authorizationCode
+    description: Browser OAuth login initiated by the gateway-connect CLI at setup.
+    sources: [mcp/virtue-ai-mcp.yml]
+  - name: bearerAuth
+    type: http
+    scheme: bearer
+    description: Bearer access token sent on each JSON-RPC tools/call to the gateway.
+    sources: [mcp/virtue-ai-mcp.yml]

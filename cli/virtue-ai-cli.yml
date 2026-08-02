@@ -1,0 +1,36 @@
+generated: '2026-07-21'
+method: searched
+source: https://www.npmjs.com/package/@virtue-ai/gateway-connect
+name: gateway-connect
+description: >-
+  Virtue AI's first-party CLI connector. It performs one-command setup to wire
+  an OpenClaw agent runtime into the Virtue AI MCP gateway: it runs an OAuth
+  login, fetches all MCP tools exposed by the gateway, generates a native
+  OpenClaw plugin wrapping each tool, patches the OpenClaw config to enable the
+  plugin, and installs a trajectory recording plugin. Each tool call is proxied
+  to the gateway as a JSON-RPC tools/call request with Bearer auth. Works with
+  any model provider (Anthropic, OpenAI, Google, LiteLLM).
+binary: gateway-connect
+install:
+  - method: npx
+    command: npx @virtue-ai/gateway-connect
+  - method: npm
+    command: npm install -g @virtue-ai/gateway-connect
+flags:
+  - flag: --gateway-url
+    description: >-
+      URL of the Virtue AI MCP gateway to connect to (standalone ngrok gateway
+      or a platform-hosted gateway path such as /api/gateways/gtw_xxxx).
+flows:
+  - name: connect-agent-to-gateway
+    description: >-
+      Connect an OpenClaw runtime to a gateway; opens the browser for OAuth,
+      fetches gateway MCP tools, and installs the generated plugin.
+    command: npx @virtue-ai/gateway-connect --gateway-url https://<gateway-host>/api/gateways/gtw_xxxx
+generated_files:
+  - path: ~/.openclaw/extensions/virtueai-mcp-tools/
+    purpose: Native OpenClaw plugin registering every gateway MCP tool.
+  - path: ~/.openclaw/extensions/virtueai-trajectory/
+    purpose: Trajectory recording plugin.
+  - path: ~/.openclaw/mcp-gateway.json
+    purpose: Auth and trajectory configuration.

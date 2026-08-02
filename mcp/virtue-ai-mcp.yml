@@ -1,0 +1,29 @@
+generated: '2026-07-21'
+method: searched
+status: published
+source: https://www.npmjs.com/package/@virtue-ai/gateway-connect
+description: >-
+  Virtue AI operates an MCP (Model Context Protocol) gateway as a product: a
+  policy-enforcing proxy that sits in front of MCP tool servers and brokers
+  tools/call requests for connected agent runtimes. Gateways are provisioned
+  per deployment (a standalone gateway or a platform-hosted gateway path), so
+  there is no single global endpoint URL; the URL is issued per tenant/gateway
+  (form: https://<host>/api/gateways/gtw_xxxx). Agents connect via the
+  first-party @virtue-ai/gateway-connect CLI, which authenticates over OAuth,
+  enumerates the gateway's MCP tools, and proxies each call as a JSON-RPC
+  tools/call request with Bearer auth. The gateway itself enforces Virtue AI
+  guardrails/action-guarding on the proxied tool traffic.
+server:
+  name: virtue-ai-mcp-gateway
+  transport: http
+  protocol: json-rpc
+  url_pattern: https://<host>/api/gateways/gtw_xxxx
+  auth:
+    - oauth2      # browser OAuth login during connect
+    - bearer      # per-call Bearer token on tools/call
+  tools: dynamic  # tools are enumerated from the connected gateway at runtime; not a fixed catalog
+notes: >-
+  Tool list is deployment-specific and discovered at connect time via the
+  gateway's MCP tools/list; Virtue AI does not publish a fixed public tool
+  catalog. Related open-source pieces in the org: mcp-filesystem,
+  arcade-actionguard-hook, cowork-virtueai-plugin.

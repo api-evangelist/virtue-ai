@@ -1,0 +1,31 @@
+generated: '2026-07-21'
+method: searched
+source: https://registry.npmjs.org / https://pypi.org
+description: >-
+  First-party Virtue AI client libraries and tools, verified against the public
+  package registries. The npm package is scope-owned (@virtue-ai) and installs
+  the gateway-connect CLI that wires an agent runtime into the Virtue AI MCP
+  gateway; the PyPI package is Virtue AI's Python toolkit. Registry HTTP status
+  recorded at fetch time.
+packages:
+  - language: javascript
+    registry: npm
+    name: "@virtue-ai/gateway-connect"
+    url: https://www.npmjs.com/package/@virtue-ai/gateway-connect
+    source: https://github.com/Virtue-AI/gateway-connect
+    install: npx @virtue-ai/gateway-connect
+    version: 0.3.9
+    official: true
+    description: >-
+      One-command setup to connect an OpenClaw agent runtime to the Virtue AI
+      MCP gateway; provides the gateway-connect binary.
+  - language: python
+    registry: pypi
+    name: virtueai
+    url: https://pypi.org/project/virtueai/
+    install: pip install virtueai
+    version: 0.2.3
+    official: true
+    description: >-
+      Virtue AI Python package (depends on openai, together, mlflow) for
+      building on Virtue AI guardrail and evaluation tooling.

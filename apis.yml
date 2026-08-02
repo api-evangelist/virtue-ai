@@ -1,8 +1,31 @@
 aid: virtue-ai
+accessModel:
+  pricing: unknown
+  onboarding: self-serve
+  trial: false
+  try_now: false
+  public: false
+  label: Self-serve signup
+  confidence: medium
+  source:
+  - authentication
+  generated: '2026-07-22'
+  method: derived
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/virtue-ai.png
 name: Virtue Ai
-description: Virtue Ai is a company surfaced as a portfolio company of lightspeed-venture-partners and
-  added to the API Evangelist network as a stub for enrichment. This profile is a lead awaiting the enrichment
-  pipeline.
+description: >-
+  Virtue AI is an enterprise AI security and safety company that secures AI
+  agents, models, and applications across an organization. Its platform pairs
+  real-time guardrails (VirtueGuard) with automated red-teaming (VirtueRed) and
+  an agent-security suite (AgentSuite-Blue and AgentSuite-Red) to detect and
+  prevent AI-related risks such as prompt injection, unsafe tool use, data
+  exfiltration, and unsanctioned agents and apps running across cloud and
+  endpoints. Virtue AI also ships an MCP gateway that proxies Model Context
+  Protocol tool calls through policy enforcement, an official CLI connector for
+  wiring agent runtimes into that gateway, and a Python package for building on
+  its guardrail and evaluation tooling. The company is backed by Lightspeed
+  Venture Partners and maintains a public developer docs site, research and
+  benchmark leaderboards, and a Vanta-hosted trust center.
 url: https://raw.githubusercontent.com/api-evangelist/virtue-ai/refs/heads/main/apis.yml
 x-type: company
 x-source: vc-portfolio
@@ -12,12 +35,60 @@ x-tier: stub
 x-tier-reason: portfolio-lead
 specificationVersion: '0.20'
 created: '2026-07-17'
-modified: '2026-07-17'
+modified: '2026-07-21'
 tags:
 - Company
+- AI Security
+- AI Safety
+- LLM Guardrails
+- AI Agents
+- Red Teaming
+- Model Context Protocol
+- Agent Security
+- Compliance
 apis: []
+common:
+- type: DomainSecurity
+  url: security/virtue-ai-domain-security.yml
+- type: Website
+  url: https://www.virtueai.com/
+- type: DeveloperPortal
+  url: https://docs.virtueai.com/
+- type: Documentation
+  url: https://docs.virtueai.com/
+- type: Blog
+  url: https://www.virtueai.com/blog
+- type: GitHubOrganization
+  url: https://github.com/Virtue-AI
+- type: SignUp
+  url: https://www.virtueai.com/contact
+- type: TermsOfService
+  url: https://www.virtueai.com/terms
+- type: PrivacyPolicy
+  url: https://www.virtueai.com/privacy-policy
+- type: TrustCenter
+  url: security/virtue-ai-trust-center.yml
+- type: X
+  url: https://x.com/VirtueAI_co
+- type: LinkedIn
+  url: https://www.linkedin.com/company/virtue-ai/
+- type: Packages
+  url: packages/virtue-ai-packages.yml
+- type: SDKs
+  url: packages/virtue-ai-packages.yml
+- type: CLI
+  url: cli/virtue-ai-cli.yml
+- type: MCPServer
+  url: mcp/virtue-ai-mcp.yml
+- type: Authentication
+  url: authentication/virtue-ai-authentication.yml
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
 - FN: APIs.json
   email: info@apis.io
+x-enrichment:
+  date: '2026-07-21'
+  status: enriched
+  artifacts_added: 6
+  pass: local-v1
